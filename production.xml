@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!-- This file is part of project_asterisk module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+      <!-- Tree view -->
+      <record model="ir.ui.view" id="production_control_view_tree2">
+          <field name="model">production</field>
+          <field name="type">tree</field>
+          <field name="priority" eval="16"/>
+          <field name="field_childs">children</field>
+          <field name="name">production_control_tree</field>
+      </record>
+      <!-- Form view -->
+      <record model="ir.ui.view" id="production_control_view_form">
+          <field name="model">production</field><!--
+          <field name="type">form</field> -->
+          <field name="inherit" ref="production.production_view_form"/>
+          <field name="name">production_control_form_view</field>
+      </record>
+      <!-- Board view -->
+      <record model="ir.ui.view" id="production_control_board">
+          <field name="type">board</field>
+          <field name="model">production</field>
+          <field name="name">production_control_board</field>
+      </record>
+
+      <!-- Tree action -->
+      <record model="ir.action.act_window" id="act_control_tree2">
+          <field name="name">Productions</field>
+          <field name="res_model">production</field>
+          <field name="domain" eval="[('parent', '=', None)]" pyson="1"/>
+      </record>
+      <record model="ir.action.act_window.view"
+          id="act_production_control_tree2_view1">
+          <field name="sequence" eval="10"/>
+          <field name="view" ref="production_control_view_tree2"/>
+          <field name="act_window" ref="act_control_tree2"/>
+      </record>
+
+      <!-- Form action -->
+      <record model="ir.action.act_window" id="act_control_form2">
+          <field name="name">Production Control</field>
+          <field name="res_model">production</field>
+          <field name="domain"
+              eval="[('parent', '=', Get(Eval('production_control.act_control_tree2', {}), 'id', None))]"
+              pyson="1"/>
+      </record>
+      <!-- Removing this makes the board work again but it shows a tree view -->
+      <record model="ir.action.act_window.view"
+          id="act_production_control_form2_view1">
+          <field name="sequence" eval="20"/>
+          <field name="view" ref="production_control_view_form"/>
+          <field name="act_window" ref="act_control_form2"/>
+      </record>
+
+      <!-- Menu entry -->
+      <record model="ir.action.act_window" id="act_production_control_board">
+          <field name="name">Production Control</field>
+      </record>
+      <record model="ir.action.act_window.view"
+          id="act_production_control_board_view1">
+          <field name="sequence" eval="10"/>
+          <field name="view" ref="production_control_board"/>
+          <field name="act_window" ref="act_production_control_board"/>
+      </record>
+      <menuitem action="act_production_control_board"
+          parent="production.menu_production" id="menu_act_action"
+          name="Production Control"/>
+
+    </data>
+</tryton>

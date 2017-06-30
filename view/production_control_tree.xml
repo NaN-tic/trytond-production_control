@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- This file is part of sale_asterisk module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+
+<tree string="Production Control">
+	<field name="number"/>
+	<field name="reference"/>
+	<field name="product"/>
+	<field name="effective_date"/>
+	<field name="state"/>
+	<field name="sequence" tree_invisible="1"/>
+</tree>
+
+<!--
+<data>
+    <xpath expr="/tree/field[@name='state']" position="before">
+        <field name="parent"/>
+    </xpath>
+</data>-->
