@@ -25,4 +25,14 @@ class Production:
             ],
         depends=['company'])
 
-    sequence = fields.Integer('Sequence', required=True)
+    sequence = fields.Integer('Sequence')
+
+    @classmethod
+    def __setup__(cls):
+        super(Production, cls).__setup__()
+        cls._order = [('sequence', 'ASC')]
+
+    @staticmethod
+    def order_sequence(tables):
+        table, _ = tables[None]
+        return [table.sequence == None, table.sequence]
