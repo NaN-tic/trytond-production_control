@@ -7,12 +7,5 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
 	<field name="reference"/>
 	<field name="product"/>
 	<field name="effective_date"/>
-	<field name="stasdcate"/>
+	<field name="state"/>
 </tree>
-
-<!--
-<data>
-    <xpath expr="/tree/field[@name='state']" position="before">
-        <field name="parent"/>
-    </xpath>
-</data>-->
