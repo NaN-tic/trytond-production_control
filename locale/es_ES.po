@@ -1,0 +1,27 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:production,sequence:"
+msgid "Sequence"
+msgstr "Secuencia"
+
+msgctxt "model:ir.action,name:act_control_form2"
+msgid "Production Control"
+msgstr "Control de producción"
+
+msgctxt "model:ir.action,name:act_control_tree2"
+msgid "Productions"
+msgstr "Producciones"
+
+msgctxt "model:ir.action,name:act_production_control_board"
+msgid "Production Control"
+msgstr "Control de producción"
+
+msgctxt "model:ir.ui.menu,name:menu_act_action"
+msgid "Production Control"
+msgstr "Control de producción"
+
+msgctxt "view:production:"
+msgid "Production Control"
+msgstr "Control de producción"
