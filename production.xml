@@ -3,24 +3,20 @@
 The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
 <tryton>
     <data>
-      <!-- Tree view -->
+      <!-- Production view -->
       <record model="ir.ui.view" id="production_control_view_tree2">
           <field name="model">production</field>
           <field name="type">tree</field>
           <field name="name">production_control_tree</field>
       </record>
-      <!-- Form view -->
-      <record model="ir.ui.view" id="production_control_view_form">
-          <field name="model">production</field>
-          <field name="inherit" ref="production.production_view_form"/>
-          <field name="name">production_control_form_view</field>
-      </record>
+
       <!-- Board view -->
       <record model="ir.ui.view" id="production_control_board">
           <field name="type">board</field>
           <field name="model">production</field>
           <field name="name">production_control_board</field>
       </record>
+
       <!-- Tree action -->
       <record model="ir.action.act_window" id="act_control_tree2">
           <field name="name">Productions</field>
@@ -32,6 +28,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
           <field name="view" ref="production_control_view_tree2"/>
           <field name="act_window" ref="act_control_tree2"/>
       </record>
+
       <!-- Form action -->
       <record model="ir.action.act_window" id="act_control_form2">
           <field name="name">Production Control</field>
@@ -43,7 +40,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
       <record model="ir.action.act_window.view"
           id="act_production_control_form2_view1">
           <field name="sequence" eval="20"/>
-          <field name="view" ref="production_control_view_form"/>
+          <field name="view" ref="production.production_view_form"/>
           <field name="act_window" ref="act_control_form2"/>
       </record>
 
@@ -60,6 +57,5 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
       <menuitem action="act_production_control_board"
           parent="production.menu_production" id="menu_act_action"
           name="Production Control"/>
-
     </data>
 </tryton>
