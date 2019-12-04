@@ -6,8 +6,7 @@ from trytond.model import fields
 __all__ = ['Production']
 
 
-class Production:
-    __metaclass__ = PoolMeta
+class Production(metaclass=PoolMeta):
     __name__ = 'production'
     sequence = fields.Integer('Sequence')
 
