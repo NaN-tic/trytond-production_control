@@ -11,7 +11,10 @@ class Production(metaclass=PoolMeta):
     @classmethod
     def __setup__(cls):
         super(Production, cls).__setup__()
-        cls._order = [('sequence', 'ASC')]
+        cls._order = [
+            ('sequence', 'ASC'),
+            ('id', 'DESC'),
+            ]
 
     @staticmethod
     def order_sequence(tables):
